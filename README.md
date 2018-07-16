@@ -55,17 +55,34 @@ $ ng serve --open
 ## + add component
 <pre>
 $ ng generate component heroes
-$ la src/app/
--rw-r--r-- 1 koge koge  425  7月 16 16:32 app.component.css
--rw-r--r-- 1 koge koge   18  7月 16 16:32 app.component.html
--rw-r--r-- 1 koge koge 1005  7月 16 16:25 app.component.spec.ts
--rw-r--r-- 1 koge koge  218  7月 16 16:31 app.component.ts
--rw-r--r-- 1 koge koge  396  7月 16 16:34 app.module.ts
-drwxr-xr-x 2 koge koge 4.0K  7月 16 16:34 heroes
+CREATE src/app/heroes/heroes.component.css (0 bytes)
+CREATE src/app/heroes/heroes.component.html (25 bytes)
+CREATE src/app/heroes/heroes.component.spec.ts (628 bytes)
+CREATE src/app/heroes/heroes.component.ts (269 bytes)
+UPDATE src/app/app.module.ts (396 bytes)
 $
-$ la src/app/heroes/
--rw-r--r-- 1 koge koge    0  7月 16 16:34 heroes.component.css
--rw-r--r-- 1 koge koge   25  7月 16 16:34 heroes.component.html
--rw-r--r-- 1 koge koge  628  7月 16 16:34 heroes.component.spec.ts
--rw-r--r-- 1 koge koge  269  7月 16 16:34 heroes.component.ts
+$ ng generate component hero-detail
+CREATE src/app/hero-detail/hero-detail.component.css (0 bytes)
+CREATE src/app/hero-detail/hero-detail.component.html (30 bytes)
+CREATE src/app/hero-detail/hero-detail.component.spec.ts (657 bytes)
+CREATE src/app/hero-detail/hero-detail.component.ts (288 bytes)
+UPDATE src/app/app.module.ts (559 bytes)
+$
+$ ng generate component messages
+CREATE src/app/messages/messages.component.css (0 bytes)
+CREATE src/app/messages/messages.component.html (27 bytes)
+CREATE src/app/messages/messages.component.spec.ts (642 bytes)
+CREATE src/app/messages/messages.component.ts (277 bytes)
+UPDATE src/app/app.module.ts (649 bytes)
+</pre>
+
+## + add service
+<pre>
+$ ng generate service hero
+CREATE src/app/hero.service.spec.ts (362 bytes)
+CREATE src/app/hero.service.ts (133 bytes)
+$
+$ ng generate service message
+CREATE src/app/message.service.spec.ts (380 bytes)
+CREATE src/app/message.service.ts (136 bytes)
 </pre>
