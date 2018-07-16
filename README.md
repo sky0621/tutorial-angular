@@ -74,6 +74,20 @@ CREATE src/app/messages/messages.component.html (27 bytes)
 CREATE src/app/messages/messages.component.spec.ts (642 bytes)
 CREATE src/app/messages/messages.component.ts (277 bytes)
 UPDATE src/app/app.module.ts (649 bytes)
+$
+$ ng generate component dashboard
+CREATE src/app/dashboard/dashboard.component.css (0 bytes)
+CREATE src/app/dashboard/dashboard.component.html (28 bytes)
+CREATE src/app/dashboard/dashboard.component.spec.ts (649 bytes)
+CREATE src/app/dashboard/dashboard.component.ts (281 bytes)
+UPDATE src/app/app.module.ts (823 bytes)
+$
+$ ng generate component hero-search
+CREATE src/app/hero-search/hero-search.component.css (0 bytes)
+CREATE src/app/hero-search/hero-search.component.html (30 bytes)
+CREATE src/app/hero-search/hero-search.component.spec.ts (657 bytes)
+CREATE src/app/hero-search/hero-search.component.ts (288 bytes)
+UPDATE src/app/app.module.ts (1251 bytes)
 </pre>
 
 ## + add service
@@ -85,4 +99,21 @@ $
 $ ng generate service message
 CREATE src/app/message.service.spec.ts (380 bytes)
 CREATE src/app/message.service.ts (136 bytes)
+$
+$ ng generate service in-memory-data
+CREATE src/app/in-memory-data.service.spec.ts (412 bytes)
+CREATE src/app/in-memory-data.service.ts (141 bytes)
+</pre>
+
+## + add routing module
+<pre>
+$ ng generate module app-routing --flat --module=app
+CREATE src/app/app-routing.module.spec.ts (308 bytes)
+CREATE src/app/app-routing.module.ts (194 bytes)
+UPDATE src/app/app.module.ts (729 bytes)
+</pre>
+
+## + add in-memory web api
+<pre>
+$ npm install angular-in-memory-web-api --save
 </pre>
