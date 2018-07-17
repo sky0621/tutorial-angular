@@ -117,3 +117,13 @@ UPDATE src/app/app.module.ts (729 bytes)
 <pre>
 $ npm install angular-in-memory-web-api --save
 </pre>
+
+# basic-guide
+
+## add directive
+<pre>
+$ ng generate directive myspy
+CREATE src/app/myspy.directive.spec.ts (220 bytes)
+CREATE src/app/myspy.directive.ts (139 bytes)
+UPDATE src/app/app.module.ts (386 bytes)
+</pre>
