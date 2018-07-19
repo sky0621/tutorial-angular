@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from '../config.service';
-import { Config } from '../config';
+import { ConfigService } from './config.service';
+import { Config } from './config';
 
 @Component({
   selector: 'app-config',
@@ -8,30 +8,40 @@ import { Config } from '../config';
   styleUrls: ['./config.component.css']
 })
 export class ConfigComponent implements OnInit {
-  config: Config;
-  headers: any
-  error: any
+  config: Config
+  headers: string[];
+  error: any;
 
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService) {
+  }
 
   ngOnInit() {
+    // this.showConfig();
+    this.showConfigResponse();
   }
 
   showConfig() {
-    this.configService.getConfig().subscribe(
-      (data: Config) => this.config = { ...data },
-      error => this.error = error
-    );
+    this.configService.getConfig()
+      .subscribe(
+        (data: Config) => this.config = { ...data },
+        error => this.error = error // error path
+      );
+      console.log(this.config);
   }
 
   showConfigResponse() {
-    this.configService.getConfigResponse().subscribe(
-      resp => {
+    this.configService.getConfigResponse()
+      // resp is of type `HttpResponse<Config>`
+      .subscribe(resp => {
+        console.log("got response");
+        // display its headers
         const keys = resp.headers.keys();
+        console.log(keys);
         this.headers = keys.map(key =>
           `${key}: ${resp.headers.get(key)}`);
-        this.config = { ...resp.body };
-      }
-    );
+  
+        // access the body directly, which is typed as `Config`.
+        this.config = { ... resp.body };
+      });
   }
 }
